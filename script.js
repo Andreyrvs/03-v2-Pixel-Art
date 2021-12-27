@@ -1,16 +1,11 @@
 // ========== 03 - Cria paleta ========== //
-const getPaletteContainer = document.getElementById('color-palette');
+const getColorPalette = document.getElementById('color-palette');
 
-function generatePaltteColor(cores) {
-  const color = document.createElement('div');
-  color.id = cores;
-  color.className = 'color';
-  color.style.backgroundColor = cores;
-  getPaletteContainer.appendChild(color);
-}
-generatePaltteColor('red');
-generatePaltteColor('green');
-generatePaltteColor('blue');
+// function generatePaltteColor() {
+//   const color = document.createElement('div');
+//   color.className = 'color';
+//   getColorPalette.appendChild(color);
+// }
 
 // ========== 04 - Cria Grid de pixels ========== //
 const getPixelBoard = document.getElementById('pixel-board');
@@ -29,4 +24,21 @@ function generatePixelBoard() {
 }
 generatePixelBoard();
 
-// ========== 04 - Cria Grid de pixels ========== //
+// ========== 07 - 08 ========== //
+
+function getCSSprop() {
+  const selectedClass = document.querySelector('.selected');
+  const cssObj = window.getComputedStyle(selectedClass, null).getPropertyValue('background-color');
+  console.log(cssObj);
+  return cssObj;
+}
+
+getColorPalette.addEventListener('click', (event) => {
+  if (event.target.id !== 'color-palette') {
+    document.querySelector('.selected').classList.remove('selected');
+    event.target.classList.add('selected');
+    getCSSprop();
+  }
+});
+
+// ========== ========== //

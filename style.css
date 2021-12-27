@@ -7,38 +7,38 @@ body {
   justify-content: center;
 }
 
-.palette-container {
+/* .palette-container {
   display: flex;
   justify-content: center;
-}
+} */
 
 #color-palette {
-  display: flex;
+  display: block;
+  text-align: center;
 }
 
-#black {
+.color {
+  display: inline-block;
+  border: solid 1px black;
+  margin-right: 8px;
+  height: 40px;
+  width: 40px;
+}
+
+.color:first-child {
   background-color: black;
-  border: solid 1px black;
-  margin-right: 10px;
-  padding: 30px;
 }
 
-#red {
-  border: solid 1px black;
-  margin-right: 10px;
-  padding: 30px;
+.color:nth-child( 2 ) {
+  background-color: red;
 }
 
-#green {
-  border: solid 1px black;
-  margin-right: 10px;
-  padding: 30px;
+.color:nth-child( 3 ) {
+  background-color: green;
 }
 
-#blue {
-  border: solid 1px black;
-  margin-right: 10px;
-  padding: 30px;
+.color:nth-child( 4 ) {
+  background-color: blue;
 }
 
 .board-container {
