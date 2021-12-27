@@ -8,7 +8,6 @@ function generatePaltteColor(cores) {
   color.style.backgroundColor = cores;
   getPaletteContainer.appendChild(color);
 }
-generatePaltteColor('black');
 generatePaltteColor('red');
 generatePaltteColor('green');
 generatePaltteColor('blue');
