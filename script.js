@@ -11,3 +11,4 @@ generatePaltteColor('black');
 generatePaltteColor('red');
 generatePaltteColor('green');
 generatePaltteColor('blue');
+ 
