@@ -1,4 +1,4 @@
-// ========== ========== //
+// ========== 03 - Cria paleta ========== //
 const getPaletteContainer = document.getElementById('color-palette');
 
 function generatePaltteColor(cores) {
@@ -14,7 +14,6 @@ generatePaltteColor('green');
 generatePaltteColor('blue');
 
 // ========== 04 - Cria Grid de pixels ========== //
-
 const getPixelBoard = document.getElementById('pixel-board');
 
 function generatePixelBoard() {
@@ -30,3 +29,5 @@ function generatePixelBoard() {
   }
 }
 generatePixelBoard();
+
+// ========== 04 - Cria Grid de pixels ========== //

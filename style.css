@@ -52,8 +52,9 @@ body {
 
 .pixel {
   background-color: white;
-  border: solid 0.5px;
+  border: solid 1px black;
   display: inline-block;
-  padding: 30px;
+  width: 40px;
+  height: 40px;
   margin-bottom: -3px;
 }
