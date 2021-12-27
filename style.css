@@ -17,25 +17,43 @@ body {
 }
 
 #black {
-  padding: 20px;
   margin-right: 10px;
   border: solid 1px black;
+  padding: 30px;
 }
 
 #red {
-  padding: 20px;
-  margin-right: 10px;
   border: solid 1px black;
+  margin-right: 10px;
+  padding: 30px;
 }
 
 #green {
-  padding: 20px;
-  margin-right: 10px;
   border: solid 1px black;
+  margin-right: 10px;
+  padding: 30px;
 }
 
 #blue {
-  padding: 20px;
-  margin-right: 10px;
   border: solid 1px black;
+  margin-right: 10px;
+  padding: 30px;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+}
+
+#pixel-board {
+  display: block;
+  margin-top: 10px;
+}
+
+.pixel {
+  background-color: white;
+  border: solid 0.5px;
+  display: inline-block;
+  padding: 30px;
+  margin-bottom: -3px;
 }
