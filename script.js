@@ -39,8 +39,6 @@ getColorPalette.addEventListener('click', (event) => {
 // ========== 08 - Passa a cor para os pixels ========== //
 getPixelBoard.addEventListener('click', (event) => {
   if (event.target.id !== 'pixel-board') {
-    // event.target.classList.remove('selected');
-    // event.target.classList.add('selected');
     event.target.style.backgroundColor = getCSSprop();
   }
 });

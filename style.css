@@ -7,10 +7,12 @@ body {
   justify-content: center;
 }
 
-/* .palette-container {
+.palette-container {
+  align-items: center;
   display: flex;
+  flex-flow: column;
   justify-content: center;
-} */
+}
 
 #color-palette {
   display: block;
@@ -58,4 +60,14 @@ body {
   height: 40px;
   margin-bottom: -3px;
   width: 40px;
+}
+
+#clear-board {
+  padding: 5px 15px 5px 15px;
+  border: none;
+  outline: none;
+}
+
+#clear-board:hover {
+  background-color: pink;
 }
