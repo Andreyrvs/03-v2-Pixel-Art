@@ -1,3 +1,41 @@
 body {
-  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.palette-container {
+  display: flex;
+  justify-content: center;
+}
+
+#color-palette {
+  display: flex;
+}
+
+#black {
+  padding: 20px;
+  margin-right: 10px;
+  border: solid 1px black;
+}
+
+#red {
+  padding: 20px;
+  margin-right: 10px;
+  border: solid 1px black;
+}
+
+#green {
+  padding: 20px;
+  margin-right: 10px;
+  border: solid 1px black;
+}
+
+#blue {
+  padding: 20px;
+  margin-right: 10px;
+  border: solid 1px black;
 }
