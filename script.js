@@ -42,3 +42,28 @@ getPixelBoard.addEventListener('click', (event) => {
     event.target.style.backgroundColor = getCSSprop();
   }
 });
+
+// ========== 09 - Preenche o Quadro de pixels com Branco ========== //
+const getBtnClearBoard = document.querySelector('#clear-board');
+
+function clearBoard() {
+  // ========== Desta forma não da erro de lint ========== //
+  const getPixel = document.getElementsByClassName('pixel').length;
+  for (let index = 0; index < getPixel; index += 1) {
+    const pixelR = document.getElementsByClassName('pixel')[index];
+    pixelR.style.backgroundColor = 'white';
+  }
+}
+
+/* ===== Forma que o Rolwane me ensinou =====
+const pixels = document.querySelectorAll('.pixel');
+const catchButton = document.querySelector('#clear-board');
+
+catchButton.addEventListener('click', () => {
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+});
+ */
+
+getBtnClearBoard.addEventListener('click', clearBoard);

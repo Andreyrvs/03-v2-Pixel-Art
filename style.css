@@ -14,11 +14,13 @@ body {
   justify-content: center;
 }
 
+/* Display tem que ser block para funcionar, devido a forma que foram gerados */
 #color-palette {
   display: block;
   text-align: center;
 }
 
+/* Display tem que ser inline-block para funcionar, devido a forma que foram gerados */
 .color {
   display: inline-block;
   border: solid 1px black;
@@ -63,11 +65,11 @@ body {
 }
 
 #clear-board {
-  padding: 5px 15px 5px 15px;
+  padding: 5px 15px;
   border: none;
   outline: none;
 }
 
 #clear-board:hover {
-  background-color: pink;
+  background-color: #12c2e9;
 }
