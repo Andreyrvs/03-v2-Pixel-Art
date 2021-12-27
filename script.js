@@ -4,20 +4,52 @@ const getColorPalette = document.getElementById('color-palette');
 // ========== 04 - Cria Grid de pixels ========== //
 const getPixelBoard = document.getElementById('pixel-board');
 
-const gridSize = 5;
-function generatePixelBoard() {
-  for (let index = 0; index < gridSize; index += 1) {
+function generatePixelBoard(tamanho) {
+  for (let index = 0; index < tamanho; index += 1) {
     const pixelLine = document.createElement('div');
     pixelLine.className = 'linha';
     getPixelBoard.appendChild(pixelLine);
-    for (let linha = 0; linha < gridSize; linha += 1) {
+    for (let linha = 0; linha < tamanho; linha += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       getPixelBoard.appendChild(pixel);
     }
   }
 }
-generatePixelBoard();
+
+// ========== 10 - input e btn para gerar o grid de pixels ========== //
+const getBoardSize = document.getElementById('board-size');
+const getBtnGenerateBoard = document.getElementById('generate-board');
+
+// ========== remove o grid ========== //
+function clearSize() {
+  while (getPixelBoard.hasChildNodes()) {
+    getPixelBoard.removeChild(getPixelBoard.lastChild)
+  }
+}
+
+// ========== alerta board invalido ========== //
+function alertMsg() {
+  const boardSize = getBoardSize.value;
+  if (!boardSize) {
+    alert('Board inválido!')
+  }
+}
+
+// ========== verifica o tamanho do board - remove o grid, e gera novamente o grid ========== //
+function pixelsBoard() {
+  let boardSize = getBoardSize.value;
+  if (boardSize < 5) {
+    boardSize = 5;
+  } else if (boardSize > 50) {
+    boardSize = 50
+  }
+  clearSize();
+  generatePixelBoard(boardSize)
+}
+
+getBtnGenerateBoard.addEventListener('click', pixelsBoard)
+getBtnGenerateBoard.addEventListener('click', alertMsg)
 
 // ========== 07 - pega a cor da paleta ========== //
 
@@ -45,25 +77,9 @@ getPixelBoard.addEventListener('click', (event) => {
 
 // ========== 09 - Preenche o Quadro de pixels com Branco ========== //
 const getBtnClearBoard = document.querySelector('#clear-board');
+getBtnClearBoard.addEventListener('click', pixelsBoard);
 
-function clearBoard() {
-  // ========== Desta forma não da erro de lint ========== //
-  const getPixel = document.getElementsByClassName('pixel').length;
-  for (let index = 0; index < getPixel; index += 1) {
-    const pixelR = document.getElementsByClassName('pixel')[index];
-    pixelR.style.backgroundColor = 'white';
-  }
+
+window.onload = () => {
+  generatePixelBoard(5);
 }
-
-/* ===== Forma que o Rolwane me ensinou =====
-const pixels = document.querySelectorAll('.pixel');
-const catchButton = document.querySelector('#clear-board');
-
-catchButton.addEventListener('click', () => {
-  for (const pixel of pixels) {
-    pixel.style.backgroundColor = 'white';
-  }
-});
- */
-
-getBtnClearBoard.addEventListener('click', clearBoard);

@@ -10,25 +10,34 @@
 
 <body>
   <header>
+
     <section class="header-container">
       <h1 id="title">Paleta de Cores</h1>
     </section>
+
   </header>
   <main>
     <section class="palette-container">
+
       <section id="color-palette">
         <div class="color selected"></div>
         <div class="color"></div>
         <div class="color"></div>
         <div class="color"></div>
       </section>
+
+      <section class="input-vqv-container">
+        <input type="number" id="board-size" min="1">
+        <button id="generate-board">VQV</button>
+      </section>
+
       <button id="clear-board">Limpar</button>
       <section class="board-container">
         <section id="pixel-board"></section>
       </section>
+
       </section>
   </main>
 </body>
 <script src="script.js"></script>
-
 </html>
