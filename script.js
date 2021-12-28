@@ -1,7 +1,34 @@
-// ========== 03 - Cria paleta ========== //
-const getColorPalette = document.getElementById('color-palette');
+/**
+ * Requisito 10, 11 e 12 Consultei essa pull request
+ * Pessoa estudante [Eduardo Fradique]
+ * https://github.com/tryber/sd-017-project-pixels-art/pull/175
+ */
 
-// ========== 04 - Cria Grid de pixels ========== //
+// ========== 12 - Cores aleatorias  ========== //
+function randomColor() {
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)},
+  ${Math.floor(Math.random() * 256)} )`;
+}
+
+function createColor() {
+  const boardColor = document.getElementById('color-palette');
+  const arrColor = ['black', randomColor(), randomColor(), randomColor()];
+
+  for (let index = 0; index < arrColor.length; index += 1) {
+    boardColor.children[index].style.backgroundColor = arrColor[index];
+    if (arrColor[index] === 'black') {
+      boardColor.children[0].className = 'color selected';
+    } else {
+      boardColor.children[index].className = 'color';
+    }
+  }
+}
+
+// ========== Gera nova paleta de cores  ========== //
+const novaPaleta = document.querySelector('.new-palette');
+novaPaleta.addEventListener('click', createColor);
+
+// ========== 04 - Cria o Board de pixels ========== //
 const getPixelBoard = document.getElementById('pixel-board');
 
 function generatePixelBoard(tamanho) {
@@ -35,6 +62,7 @@ function alertMsg() {
     alert('Board inválido!');
   }
 }
+
 // ========== 11 - verifica o tamanho do board  ========== //
 function pixelsBoard() {
   let boardSize = getBoardSize.value;
@@ -43,7 +71,7 @@ function pixelsBoard() {
   } else if (boardSize > 50) {
     boardSize = 50;
   }
-  // ========== - remove o grid, e gera novamente o grid ========== //
+  // ========== remove o grid, e gera novamente o grid ========== //
   clearSize();
   generatePixelBoard(boardSize);
 }
@@ -52,6 +80,7 @@ getBtnGenerateBoard.addEventListener('click', pixelsBoard);
 getBtnGenerateBoard.addEventListener('click', alertMsg);
 
 // ========== 07 - pega a cor da paleta ========== //
+const getColorPalette = document.getElementById('color-palette');
 
 function getCSSprop() {
   const selectedClass = document.querySelector('.selected');
@@ -81,4 +110,5 @@ getBtnClearBoard.addEventListener('click', pixelsBoard);
 
 window.onload = () => {
   generatePixelBoard(5);
+  createColor();
 };
