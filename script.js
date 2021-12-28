@@ -24,7 +24,7 @@ const getBtnGenerateBoard = document.getElementById('generate-board');
 // ========== remove o grid ========== //
 function clearSize() {
   while (getPixelBoard.hasChildNodes()) {
-    getPixelBoard.removeChild(getPixelBoard.lastChild)
+    getPixelBoard.removeChild(getPixelBoard.lastChild);
   }
 }
 
@@ -32,24 +32,24 @@ function clearSize() {
 function alertMsg() {
   const boardSize = getBoardSize.value;
   if (!boardSize) {
-    alert('Board inválido!')
+    alert('Board inválido!');
   }
 }
-
-// ========== verifica o tamanho do board - remove o grid, e gera novamente o grid ========== //
+// ========== 11 - verifica o tamanho do board  ========== //
 function pixelsBoard() {
   let boardSize = getBoardSize.value;
   if (boardSize < 5) {
     boardSize = 5;
   } else if (boardSize > 50) {
-    boardSize = 50
+    boardSize = 50;
   }
+  // ========== - remove o grid, e gera novamente o grid ========== //
   clearSize();
-  generatePixelBoard(boardSize)
+  generatePixelBoard(boardSize);
 }
 
-getBtnGenerateBoard.addEventListener('click', pixelsBoard)
-getBtnGenerateBoard.addEventListener('click', alertMsg)
+getBtnGenerateBoard.addEventListener('click', pixelsBoard);
+getBtnGenerateBoard.addEventListener('click', alertMsg);
 
 // ========== 07 - pega a cor da paleta ========== //
 
@@ -79,7 +79,6 @@ getPixelBoard.addEventListener('click', (event) => {
 const getBtnClearBoard = document.querySelector('#clear-board');
 getBtnClearBoard.addEventListener('click', pixelsBoard);
 
-
 window.onload = () => {
   generatePixelBoard(5);
-}
+};
