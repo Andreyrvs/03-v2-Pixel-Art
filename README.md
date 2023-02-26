@@ -30,3 +30,5 @@ Front-end:
   ```
 
 * Clique duas vezes no arquivo `index.html`
+
+> A aplicação utiliza a resolução **1366 x 768**
